@@ -3,16 +3,23 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { InputScreenComponent } from './input-screen/input-screen.component';
+import { DisplayScreenComponent } from './display-screen/display-screen.component';
+import { IfscService } from './ifsc.service';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InputScreenComponent,
+    DisplayScreenComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [IfscService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,20 @@
+<div class="container" *ngIf="!bankDetails">
+  <div class="row" >
+    <div class="col-md-8 col-md-offset-2">
+      <div class="form-group">
+        <label for="ifsc">IFSC : </label>
+        <input type="text" class="form-control" #input required >
+      </div>
+      <button (click)="getBankDetails(input.value)" class="btn btn-primary">
+        Find
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="bankDetails" >
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <app-display-screen (backEvent)="goBack()" [bankDetail]="bankDetails" ></app-display-screen>
+    </div>
+  </div>
+</div>

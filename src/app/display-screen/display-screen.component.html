@@ -1,0 +1,65 @@
+
+<div class="card">
+  <h3>Details </h3>
+  <div class="row">
+    <div class="col-xs-2">
+      <label for="ifsc">IFSC Code : </label>
+    </div>
+    <div class="col-xs-10">
+      {{bankDetail.IFSC}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2">
+      <label for="bank">Bank : </label>
+    </div>
+    <div class="col-xs-10">
+      {{bankDetail.BANK}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2">
+      <label for="address">Address : </label>
+    </div>
+    <div class="col-xs-10">
+      {{bankDetail.ADDRESS}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2">
+      <label for="district">District : </label>
+    </div>
+    <div class="col-xs-10">
+      {{bankDetail.DISTRICT}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2">
+      <label for="state">STATE : </label>
+    </div>
+    <div class="col-xs-10">
+      {{bankDetail.STATE}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2">
+      <label for="branch">Branch : </label>
+    </div>
+    <div class="col-xs-10">
+      {{bankDetail.BRANCH}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2">
+      <label for="contact">Contact : </label>
+    </div>
+    <div class="col-xs-10">
+      {{bankDetail.CONTACT}}
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <button class="btn btn-primary" type="button" (click)="goBack()" >Back</button>
+  </div>
+</div>
