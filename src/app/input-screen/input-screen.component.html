@@ -1,13 +1,22 @@
+
 <div class="container" *ngIf="!bankDetails">
   <div class="row" >
     <div class="col-md-8 col-md-offset-2">
       <div class="form-group">
         <label for="ifsc">IFSC : </label>
-        <input type="text" class="form-control" #input required >
+        <input type="text" class="form-control" #input placeholder="Enter IFSC Code" required >
       </div>
-      <button (click)="getBankDetails(input.value)" class="btn btn-primary">
+      <button (click)="getBankDetails(input.value)" type="button" class="btn btn-primary">
         Find
       </button>
+    </div>
+    <div class="row" *ngIf="errorAlert" >
+      <div class="col-xs-8 col-xs-offset-2">
+          <div class="error alert alert-warning alert-dismissible" role="alert">
+              <button type="button" class="close" (click)="errorAlert=null" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <strong>{{errorAlert}}</strong>
+            </div>
+      </div>
     </div>
   </div>
 </div>

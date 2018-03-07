@@ -9,7 +9,7 @@ import { Bank } from '../bank.model';
 })
 export class InputScreenComponent implements OnInit {
   bankDetails:Bank
-
+  errorAlert:String;
   constructor(
     private ifscService:IfscService
   ) { }
@@ -18,14 +18,22 @@ export class InputScreenComponent implements OnInit {
   }
 
   getBankDetails(ifsc){
+    if(!ifsc){
+      return this.errorAlert = 'IFSC field cannot be empty!'
+    }
     this.ifscService.getBank(ifsc).subscribe(
       (bank:Bank)=>{
         this.bankDetails=bank;
+      },
+      (err)=>{
+        console.error(err);
+        this.errorAlert= 'Bank not found. Please check your IFSC code again.'
       }
     )
   }
 
   goBack(){
     this.bankDetails=null;
+    this.errorAlert=null;
   }
 }
